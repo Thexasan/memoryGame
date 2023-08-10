@@ -69,7 +69,7 @@ const getData = () => [
 ];
 
 const random = () => {
-  return getData().sort(() => Math.random() - 0.5);
+  return getData().sort(() => Math.random() - 0.5); 
 };
 
 const cardGenerator = () => {
@@ -109,7 +109,7 @@ function checkCards(e) {
         setTimeout(() => {
           elem.classList.remove("flip");
           elem.style.pointerEvents = "none";
-          elem.style.display = "none";
+          elem.style.transform = "rotateY(180deg)"; //aliw kadm diga delete namewa
         }, 1000);
       });
     }
