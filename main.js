@@ -102,6 +102,18 @@ function checkCards(e) {
   target.classList.add("flip");
   const flip = document.querySelectorAll(".flip");
   if (flip.length == 2) {
+    const cards = document.querySelectorAll(".card") 
+    // console.log(cards);
+    cards.forEach((el)=>{
+      // console.log(el.length);
+      if(!el.classList.contains("flip")){
+          setTimeout(()=>{
+            el.style.pointerEvents="auto"
+          },1000)
+          el.style.pointerEvents="none"
+      }
+    })
+
     if (flip[0].getAttribute("name") == flip[1].getAttribute("name")) {
       console.log("match");
       console.log(flip);
@@ -129,7 +141,7 @@ function time() {
   let m = d.getMinutes();
   let h = d.getHours();
   span.textContent = 
-    ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+    ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
 }
 
 setInterval(time, 1000);
